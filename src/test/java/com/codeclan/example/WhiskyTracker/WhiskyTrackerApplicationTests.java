@@ -45,4 +45,9 @@ public class WhiskyTrackerApplicationTests {
 		assertEquals("Macallan", found2.get(0).getName());
 		assertEquals("Balvenie", found2.get(1).getName());
 	}
+	@Test
+	public void canFindAllWhiskiesFromSpecificDistilleryByYear() {
+		List<Whisky> found = whiskyRepository.findWhiskyInSpecificDistilleryByYear("Glendronach", 15);
+		assertEquals("The Glendronach Revival", found.get(0).getName());
+	}
 }
